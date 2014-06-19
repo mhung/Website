@@ -1,19 +1,4 @@
-//var app=angular.module("myApp", []);
- 
 
-/*app.config( function($routeProvider)
-{
-      $routeProvider.when('/detail/:id',
-      {
-            templateUrl:'./view/details.html',
-            controller:'DetailsController'
-      });
-    
-});
-
-app.controller('DetailsController', function($scope, $routeParams) {
-      $scope.id = $routeParams.orderId;
-});*/
 
 
 var app=angular.module("myApp", ["ngRoute","ngAnimate"]);
@@ -39,7 +24,36 @@ app.controller('DetailsController', function($scope, $routeParams)
 {
 
       $scope.id = $routeParams.id;
-     
+
+      $scope.whichItem=$routeParams.id;
+
+      if ($routeParams.id>0)
+      {
+            $scope.prevItem=Number($routeParams.id)-1;
+
+      }
+      else
+      {
+            $scope.prevItem=$scope.yelp.length-1;
+      }
+
+       if ($routeParams.id<$scope.yelp.length-1)
+      {
+            $scope.nextItem=Number($routeParams.id)+1;
+
+      }
+      else
+      {
+            $scope.nextItem=0;
+      }
+      
+
+     /* $location.hash($scope.id);
+      $timeout(function()
+      {
+         $anchorScroll();   
+      });*/
+      
       //callYelp(type,place);
 
       //$scope.whichItem=$routeParams.id;
@@ -49,12 +63,10 @@ app.controller('DetailsController', function($scope, $routeParams)
 
 app.controller("tasksController", function($scope, $http,$window) 
 {
-      //var place= "New York";
-      //var type= "Restaurant";
-      //callyelp(type,place);
+     
       $scope.init=function ()
       {
-            //$scope.alertBusiness=" ";
+           
             var place= "New York";
             var type= "Restaurant";
             callYelp(type,place);
@@ -70,7 +82,7 @@ app.controller("tasksController", function($scope, $http,$window)
             var type=$scope.sort;
             var place=$scope.place;
            callYelp(type,place);
-           // console.log("ENTRO AQUI");
+           
            
 
       }
@@ -134,7 +146,9 @@ app.controller("tasksController", function($scope, $http,$window)
             $http.get("bd/deleteMsg.php?id="+id).success(
             function (data,status,headers,config)
             {
+                  $window.alert("You have deleted an item.");
                   callChat();
+
             })
             .error(function(response, status, headers, config) 
             {
@@ -181,13 +195,15 @@ app.controller("tasksController", function($scope, $http,$window)
 
 
                               var businesses=[];
-                                  
+                              var cont=0;
                               for (var i=0;i<answer.length;i++)
                               {
+                                          //cont=cont+1;
 
                                           var obj={};
+                                          obj["idItem"]=cont;
                                           obj["name"]=answer[i].name;
-                                          obj["is_claimed"]=answer[i].is_claimed;
+                                          obj["is_claimed"]=answer[i].is_claimed;                                          
                                           obj["raiting"]=answer[i].rating;
                                           obj["ratingImg"]=answer[i].rating_img_url;
                                           obj["phone"]=answer[i].display_phone;
@@ -196,7 +212,10 @@ app.controller("tasksController", function($scope, $http,$window)
                                           obj["zipCode"]=answer[i].postal_code;
                                           obj["is_closed"]=answer[i].postal_code;
                                           obj["snippet_text"]=answer[i].snippet_text;
+                                          obj["snippet_image_url"]=answer[i].snippet_image_url;
                                           obj["id"]=answer[i].id;
+                                          obj["categories"]=answer[i].categories;
+                                          //obj["reviews"]=answer[i].reviews;
 
                                           if (answer[i].deals)
                                           {
@@ -207,8 +226,9 @@ app.controller("tasksController", function($scope, $http,$window)
                                                 obj["deals"]=0;
                                           }
 
+                                          cont++;
                                           
-                                          obj["snippetText"]=answer[i].snippet_text
+                                          
                                           console.log (obj);
                                           businesses.push(obj);
 

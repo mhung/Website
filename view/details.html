@@ -1,129 +1,120 @@
 
-<html>
+<!--<html>
 <head></head>
-<title>My App</title>
-<style>
-
-.page        
-{ 
-	bottom:0; 
-	top:0; 
-	padding-top:200px;
-	position:absolute; 
-	text-align:center;
-	width:50%;
-	background:#00D0BC 
-
-}
-
-.page h1 	{ font-size:60px; }
-.page a     { margin-top:50px; }
-
-/* PAGES
-============================================================================= */
-
-
-/* ANIMATIONS
-============================================================================= */
-
-.page.ng-leave 	{ z-index:9999; }
-.page.ng-enter 	{ z-index:8888; }
-
-
-
-/* rotate and fall */
-@-webkit-keyframes rotateFall {
-	0% { -webkit-transform: rotateZ(0deg); }
-	20% { -webkit-transform: rotateZ(10deg); -webkit-animation-timing-function: ease-out; }
-	40% { -webkit-transform: rotateZ(17deg); }
-	60% { -webkit-transform: rotateZ(16deg); }
-	100% { -webkit-transform: translateY(100%) rotateZ(17deg); }
-}
-@-moz-keyframes rotateFall {
-	0% { -moz-transform: rotateZ(0deg); }
-	20% { -moz-transform: rotateZ(10deg); -moz-animation-timing-function: ease-out; }
-	40% { -moz-transform: rotateZ(17deg); }
-	60% { -moz-transform: rotateZ(16deg); }
-	100% { -moz-transform: translateY(100%) rotateZ(17deg); }
-}
-@keyframes rotateFall {
-	0% { transform: rotateZ(0deg); }
-	20% { transform: rotateZ(10deg); animation-timing-function: ease-out; }
-	40% { transform: rotateZ(17deg); }
-	60% { transform: rotateZ(16deg); }
-	100% { transform: translateY(100%) rotateZ(17deg); }
-}
-
-/* scale up */
-@keyframes scaleUp {
-	from 		{ opacity: 0.3; -webkit-transform: scale(0.8); }
-}
-@-moz-keyframes scaleUp {
-	from 		{ opacity: 0.3; -moz-transform: scale(0.8); }
-}
-@-webkit-keyframes scaleUp {
-	from 		{ opacity: 0.3; -webkit-transform: scale(0.8); }
-}
-
-/* slide in from the right */
-@keyframes slideInRight {
-	from 	{ transform:translateX(100%); }
-	to 		{ transform: translateX(0); }
-}
-@-moz-keyframes slideInRight {
-	from 	{ -moz-transform:translateX(100%); }
-	to 		{ -moz-transform: translateX(0); }
-}
-@-webkit-keyframes slideInRight {
-	from 	{ -webkit-transform:translateX(100%); }
-	to 		{ -webkit-transform: translateX(0); }
-}
-
-/* slide in from the bottom */
-@keyframes slideInUp {
-	from 	{ transform:translateY(100%); }
-	to 		{ transform: translateY(0); }
-}
-@-moz-keyframes slideInUp {
-	from 	{ -moz-transform:translateY(100%); }
-	to 		{ -moz-transform: translateY(0); }
-}
-@-webkit-keyframes slideInUp {
-	from 	{ -webkit-transform:translateY(100%); }
-	to 		{ -webkit-transform: translateY(0); }
-}
-
-/* slide in from the bottom */
-@keyframes slideOutLeft {
-	to 		{ transform: translateX(-100%); }
-}
-@-moz-keyframes slideOutLeft {	
-	to 		{ -moz-transform: translateX(-100%); }
-}
-@-webkit-keyframes slideOutLeft {
-	to 		{ -webkit-transform: translateX(-100%); }
-}
-
-/* rotate out newspaper */
-@-webkit-keyframes rotateOutNewspaper {
-	to { -webkit-transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
-}
-@-moz-keyframes rotateOutNewspaper {
-	to { -moz-transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
-}
-@keyframes rotateOutNewspaper {
-	to { transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
-}
-
-</style>
-<body>
-<!--<div ng-model="detail">-->
-	<h2>This is a test</h2>
-	<h1>{{id}}</h1>
+<title>My App</title>-->
+<link rel="stylesheet" href="./css/css.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
 	
-<!--</div>-->
-	<a href="index3.php"> Back to search </a>
-</body>
-</html>
+
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12">
+
+			  	<div class="col-sm-2" style="text-align:right; vertical-align: middle;">
+
+			  		<img ng-src="{{yelp[whichItem].img}}" class="img-rounded" />
+
+			  	</div>
+				
+
+			  	<div class="col-sm-6" style="text-align:left;">
+
+			  		<h1 style="color:#9a2452;">{{yelp[whichItem].name}}</h1>
+					<br/>
+				
+					<!--<label>Raiting: {{yelp[whichItem].raiting}}</label>
+					<br/>
+					<label>Location: {{yelp[whichItem].location}}</label>
+					<br/>
+					<label>Phone: {{yelp[whichItem].phone}}</label>
+					<br/>
+					<label>Categories {{yelp[whichItem].categories}}</label>-->
+			  	</div>
+
+			  	<div class="col-sm-4" style="text-align:left;">
+			  		<label>Raiting: {{yelp[whichItem].raiting}}</label>
+					<br/>
+					<label>Location: {{yelp[whichItem].location}}</label>
+					<br/>
+					<label>Phone: {{yelp[whichItem].phone}}</label>
+					<br/>
+					<label>Categories {{yelp[whichItem].categories}}</label>
+
+			  	</div>
+
+				
+				 
+			</div>
+
+
+			<br/>
+
+			<br/>
+
+			
+
+		</div>
+
+
+		<br/>
+
+		<div class="line"></div>
+
+		<br/>
+
+		<div class="row">
+			<div class="col-sm-12">
+
+				
+
+				<div class="col-sm-8" style="text-align:right;">
+					
+					<h1 >Review</h1>
+					
+					
+					<label>{{yelp[whichItem].snippet_text}}</label>
+				</div>
+				<div class="col-sm-4" style="text-align:left;">
+					<img ng-src="{{yelp[whichItem].snippet_image_url}}" class="img-circle"/>
+
+				</div>
+
+
+			</div>
+
+			
+		</div>
+
+
+
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+
+		<div class="row">
+
+			<div class="col-sm-4">
+				<a href="#/detail/{{prevItem}}">Prev</a>
+			</div>
+
+			<div class="col-sm-4">
+
+				<a href="index.php"> Back to search </a>
+
+			</div>
+
+			<div class="col-sm-4">
+				<a href="#/detail/{{nextItem}}">Next</a>
+			</div>
+
+		</div>
+
+
+	</div>
+
+
+
 
 

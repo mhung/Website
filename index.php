@@ -20,8 +20,6 @@
       <div style=" background-color:#06333d; widht:100%; height:200px; ">
             
       </div>
-
-
       
       <h2>You're looking for  {{sort}}  {{place}} </h2>
 
@@ -51,20 +49,20 @@
                   
                   
 
-                  <div class="col-sm-3" ng-repeat="yelpa in yelp" style="height:250px; text-align:center;" >
+                  <div class="col-sm-3" ng-repeat="yelpa in yelp" style="height:250px; text-align:center;"  autoscroll>
                       
 
                         <img ng-src="{{yelpa.img}}" class="img-thumbnail "/>
                         <br/>
                        <!-- <a style="color:#9a2452;" ng-mouseover="test()" href="#/detail/{{yelpa.id}}">{{yelpa.name}} </a>-->
-                       <a style="color:#9a2452;" ng-mouseover="test()" href="#/detail/{{yelpa.id}}">{{yelpa.name}} </a>
+                        <a style="color:#9a2452;" href="#/detail/{{yelpa.idItem}}">{{yelpa.name}} </a>
                         <br/> 
                         <label>Raiting: {{yelpa.raiting}}   </label>
                         <br/>
                        
                         <label>Location: {{yelpa.location}}</label>
                         <br/>
-                        <!--<label>Phone: {{yelpa.phone}}</label>-->
+                     
                       
                   </div>
                   
@@ -103,18 +101,36 @@
                   <div class="col-sm-4">
                         <div class="panel panel-default">  
                               <div class="panel-body">
-                                    <input type="text" require  ngMinlength=1 style=" filter: alpha(opacity=55); -webkit-box-shadow: none;box-shadow: none;opacity: .55;"  ng-model="name"  placeholder="Nickname"/>
-                                    <input type="text" require ngMinlength=1 style=" filter: alpha(opacity=55); -webkit-box-shadow: none;box-shadow: none;opacity: .55;"  ng-model="txt" placeholder="let us know what you think"/>
-                                    <a class="btn btn-default btn-sm" ng-click="addMsg()">Add message</a> 
-                                    <ng-message></ng-message>
+                                 
+                                    <div class="col-sm-6">
+                                          <input type="text" require  ngMinlength=1 style=" filter: alpha(opacity=55); -webkit-box-shadow: none;box-shadow: none;opacity: .55;"  ng-model="name"  placeholder="Email or name"/>
 
-                                    <ul >
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                          <input type="text" require ngMinlength=1 style=" filter: alpha(opacity=55); -webkit-box-shadow: none;box-shadow: none;opacity: .55;"  ng-model="txt" placeholder="Msg"/>
+
+                                    </div>
+
+                                    <br/>
+
+                                    <div class="col-sm-6">
+                                          &nbsp;
+                                    </div>
+                                    <div class="col-sm-6">
+                                           <a class="btn btn-default btn-sm" ng-click="addMsg()">Add message</a> 
+                                    </div>
+
+
+                                      <ul >
                                           <li ng-repeat="messages in message">{{messages.message}} by {{messages.name}}
                                                 <label style="display:none;">{{messages.idMessage}}</label>
                                                 <a ng-click="deleteMsg(messages.idMessage)">Delete me</a>
                                           </li>
 
-                                    </ul> 
+                                    </ul>
+
+                                
                               </div> 
                         </div>  
                   </div>
@@ -124,9 +140,12 @@
 
 
        <!--<div ng-view></div>-->
-       <div class="page" ng-view autoscroll></div>
-
+       
+       
 </div>
+
+<div class="page" ng-view autoscroll></div>
+
 
 <div class="container">
       <footer class="row">

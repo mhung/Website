@@ -26,4 +26,53 @@ li
 	/*width:100%;
 	height:400px;*/
 	background-position:center;
+	
+}
+
+.page        
+{ 
+	left: 0;
+	bottom:0; 
+	top:0; 
+	padding-top:200px;
+	position:absolute; 
+	text-align:center;
+	width:100%;
+	height: 2000px;
+	/*background:#00D0BC;*/
+	background:#ffffff;
+	overflow-y:hidden;
+
+}
+
+/*.page h1 	{ font-size:10px; }*/
+.page a     { margin-top:10px; }
+
+
+.line
+{
+	border-width: 1px 0;
+	border-color: #eeeeee -moz-use-text-color #ffffff;
+	border-style: solid none;
+}
+
+hr {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #eeeeee -moz-use-text-color #ffffff;
+    border-image: none;
+    border-left: 0 none;
+    border-right: 0 none;
+    border-style: solid none;
+    border-width: 1px 0;
+    margin: 20px 0;
+
+}
+
+.featurette-divider {
+}
+.featurette-divider {
+    margin: 20px 0;
 }
