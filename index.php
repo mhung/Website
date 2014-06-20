@@ -1,7 +1,7 @@
 <html ng-app="myApp">
 <head></head>
 <title>My App</title>
-<link rel="stylesheet" type="text/css" href=".css/css.css">
+<link rel="stylesheet" type="text/css" href="./css/css.css">
 <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
 <!--<script src-"js/angular-animate.min.js" type="text/javascript"></script>-->
@@ -42,13 +42,16 @@
 
 
             <div class="row">
+                  <div class="col-sm-8">
+                        <h2 ng-model="alertBusiness" ng-if="yelp.length==0">Sorry! No items found</h2>
+                  </div>
+            </div>
+
+
+            <div class="row">
                  <div class="col-sm-8">
 
                  
-                        <h2 ng-model="alertBusiness" ng-show="!yelp.length">Sorry! No items found</h2>
-                  
-                  
-
                   <div class="col-sm-3" ng-repeat="yelpa in yelp" style="height:250px; text-align:center;"  autoscroll>
                       
 
@@ -74,9 +77,9 @@
 
                          <div class="panel panel-default">  
                               <div class="panel-body">
-                                    Deals 
+                                    <h3>Deals </h3>
                                     
-                                    <h2 ng-if="yelp.deals==0" >Sorry! No deals for this moment</h2>
+                                    <label ng-model="alertDeal">{{alertDeal}}</label>
                                     <br/>
 
                                     <div ng-repeat="yelpo in yelp"> 
@@ -102,22 +105,24 @@
                         <div class="panel panel-default">  
                               <div class="panel-body">
                                  
-                                    <div class="col-sm-6">
-                                          <input type="text" require  ngMinlength=1 style=" filter: alpha(opacity=55); -webkit-box-shadow: none;box-shadow: none;opacity: .55;"  ng-model="name"  placeholder="Email or name"/>
-
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                          <input type="text" require ngMinlength=1 style=" filter: alpha(opacity=55); -webkit-box-shadow: none;box-shadow: none;opacity: .55;"  ng-model="txt" placeholder="Msg"/>
-
+                                    <div class="row center-block align" >
+                                          <div class="col-sm-12"  >
+                                                <input type="text" require  ngMinlength=1 style=" filter: alpha(opacity=55); -webkit-box-shadow: none;box-shadow: none;opacity: .55;"  ng-model="name"  placeholder="Email or name"/>
+                                          </div>
                                     </div>
 
                                     <br/>
+                                    <div class="row center-block align" >
+                                          <div class="col-sm-12">
+                                                <input type="text" require ngMinlength=1 style=" filter: alpha(opacity=55); -webkit-box-shadow: none;box-shadow: none;opacity: .55;"  ng-model="txt" placeholder="Msg"/>
+                                          </div>
 
-                                    <div class="col-sm-6">
-                                          &nbsp;
                                     </div>
-                                    <div class="col-sm-6">
+
+                                    <div class="clearfix"></div>
+                                    <br/>
+                                    
+                                    <div class="row center-block align" >
                                            <a class="btn btn-default btn-sm" ng-click="addMsg()">Add message</a> 
                                     </div>
 

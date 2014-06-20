@@ -71,9 +71,40 @@ app.controller("tasksController", function($scope, $http,$window)
             var type= "Restaurant";
             callYelp(type,place);
             callChat();
+
+
+
           
       }
 
+
+      function checkDeal()
+      {
+            var cont=0;
+            for (var i=0;i<$scope.yelp.length;i++)
+            {
+                  if ($scope.yelp[i].contDeals==0)
+                  {
+
+                  }
+                  else
+                  {
+                        cont=cont+1;
+                 
+                  }
+                 
+
+            }
+            if (cont<1)
+            {
+                  $scope.alertDeal="Sorry! No deals for this moment";
+            }
+            else
+            {
+                  $scope.alertDeal=" ";
+            }
+
+      }
 
 
        
@@ -196,6 +227,7 @@ app.controller("tasksController", function($scope, $http,$window)
 
                               var businesses=[];
                               var cont=0;
+                              var contDeals=0;
                               for (var i=0;i<answer.length;i++)
                               {
                                           //cont=cont+1;
@@ -220,9 +252,11 @@ app.controller("tasksController", function($scope, $http,$window)
                                           if (answer[i].deals)
                                           {
                                                 obj["deals"]=answer[i].deals;
+                                                obj["contDeals"]=contDeals+1;
                                           }
                                           else
                                           {
+                                                obj["contDeals"]=contDeals;
                                                 obj["deals"]=0;
                                           }
 
@@ -237,7 +271,7 @@ app.controller("tasksController", function($scope, $http,$window)
                                    
                               
                               $scope.yelp=businesses;
-                                     
+                              checkDeal();       
                         });
                 
 

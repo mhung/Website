@@ -71,8 +71,16 @@ hr {
 
 }
 
-.featurette-divider {
+.featurette-divider 
+{
+	
 }
-.featurette-divider {
+.featurette-divider 
+{
     margin: 20px 0;
+}
+
+.align
+{
+	text-align: center;
 }
