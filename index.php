@@ -81,7 +81,7 @@
 
                          <div class="panel panel-default">  
                               <div class="panel-body">
-                                    <h3>Fast comment room: </h3> 
+                                    <h3>Comments room: </h3> 
                                     <br/>
                                     <div class="row center-block align" >
                                           <div class="col-sm-12"  >
