@@ -50,61 +50,39 @@
 
             <div class="row">
                  <div class="col-sm-8">
-
-                 
-                  <div class="col-sm-3" ng-repeat="yelpa in yelp" style="height:250px; text-align:center;"  autoscroll>
-                      
-
-                        <img ng-src="{{yelpa.img}}" class="img-thumbnail "/>
-                        <br/>
-                       <!-- <a style="color:#9a2452;" ng-mouseover="test()" href="#/detail/{{yelpa.id}}">{{yelpa.name}} </a>-->
-                        <a style="color:#9a2452;" href="#/detail/{{yelpa.idItem}}">{{yelpa.name}} </a>
-                        <br/> 
-                        <label>Raiting: {{yelpa.raiting}}   </label>
-                        <br/>
-                       
-                        <label>Location: {{yelpa.location}}</label>
-                        <br/>
-                     
-                      
-                  </div>
-                  
-
-                  </div>
+                        <div class="col-sm-3" ng-repeat="yelpa in yelp" style="height:250px; text-align:center;"  autoscroll>
+                              <img ng-src="{{yelpa.img}}" class="img-thumbnail "/>
+                              <br/>
+                              <a style="color:#9a2452;" href="#/detail/{{yelpa.idItem}}">{{yelpa.name}} </a>
+                              <br/> 
+                              <label>Raiting: {{yelpa.raiting}}   </label>
+                              <br/>
+                              <label>Location: {{yelpa.location}}</label>
+                              <br/>
+                        </div>
+                 </div>
 
                   <div class="col-sm-4" >
 
 
                          <div class="panel panel-default">  
                               <div class="panel-body">
-                                    <h3>Deals </h3>
-                                    
+                                    <h3>Deals </h3>                                    
                                     <label ng-model="alertDeal">{{alertDeal}}</label>
                                     <br/>
-
                                     <div ng-repeat="yelpo in yelp"> 
-
-
-                                          <!--<div class="test"  ng-hide="yelpo.length">
-                                                No items found.
-                                          </div>-->
-
-                                        <!--  <div ng-repeat-empty>There are no results found</div>-->
-
                                           <h5 ng-repeat="deals in yelpo.deals">{{deals.what_you_get}}</h5>
                                     </div>
-
-
 
                               </div>
                         </div>
 
-                  </div>
 
-                  <div class="col-sm-4">
-                        <div class="panel panel-default">  
+
+                         <div class="panel panel-default">  
                               <div class="panel-body">
-                                 
+                                    <h3>Fast comment room: </h3> 
+                                    <br/>
                                     <div class="row center-block align" >
                                           <div class="col-sm-12"  >
                                                 <input type="text" require  ngMinlength=1 style=" filter: alpha(opacity=55); -webkit-box-shadow: none;box-shadow: none;opacity: .55;"  ng-model="name"  placeholder="Email or name"/>
@@ -134,18 +112,13 @@
                                           </li>
 
                                     </ul>
-
-                                
                               </div> 
                         </div>  
                   </div>
-
             </div>
       </div>
 
-
        <!--<div ng-view></div>-->
-       
        
 </div>
 
