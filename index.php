@@ -21,7 +21,7 @@
             
       </div>
       
-      <h2>You're looking for  {{sort}}  {{place}} </h2>
+      <h2>You're looking for  {{sort}} in {{place}} </h2>
 
       <div style="clear:both;"></div>
 

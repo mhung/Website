@@ -66,7 +66,8 @@ app.controller("tasksController", function($scope, $http,$window)
      
       $scope.init=function ()
       {
-           
+           $scope.sort="Restaurant";
+           $scope.place="New York";
             var place= "New York";
             var type= "Restaurant";
             callYelp(type,place);
