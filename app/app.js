@@ -161,7 +161,10 @@ app.controller("tasksController", function($scope, $http,$window)
                   function(data,status, headers, config)
                   {
                         //$scope.message=data;
+                        $scope.name="";
+                        $scope.txt="";
                         callChat();
+                        $window.alert("Thank you for adding a comment.");
                   })
                   .error(function(response, status, headers, config) 
                   {
@@ -178,8 +181,11 @@ app.controller("tasksController", function($scope, $http,$window)
             $http.get("bd/deleteMsg.php?id="+id).success(
             function (data,status,headers,config)
             {
-                  $window.alert("You have deleted an item.");
+                  
+                  $scope.name="";
+                  $scope.txt="";
                   callChat();
+                  $window.alert("You have deleted an item.");
 
             })
             .error(function(response, status, headers, config) 
@@ -241,13 +247,17 @@ app.controller("tasksController", function($scope, $http,$window)
                                           obj["ratingImg"]=answer[i].rating_img_url;
                                           obj["phone"]=answer[i].display_phone;
                                           obj["img"]=answer[i].image_url;
-                                          obj["location"]=answer[i].location.address;
+                                          
+                                         
+                                          obj["location"]=answer[i].location.address[0];
+                                         
+
                                           obj["zipCode"]=answer[i].postal_code;
                                           obj["is_closed"]=answer[i].postal_code;
                                           obj["snippet_text"]=answer[i].snippet_text;
                                           obj["snippet_image_url"]=answer[i].snippet_image_url;
                                           obj["id"]=answer[i].id;
-                                          obj["categories"]=answer[i].categories;
+                                          obj["categories"]=answer[i].categories[0][0];
                                           //obj["reviews"]=answer[i].reviews;
 
                                           if (answer[i].deals)

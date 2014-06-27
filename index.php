@@ -17,9 +17,32 @@
 <div  ng-init="init()" class="container">
 
 
-      <div style=" background-color:#06333d; widht:100%; height:200px; ">
+      <!--<div style=" background-color:#06333d; widht:10%; height:200px; ">-->
+
+     <!-- <div style=" background-color:#ffffff; widht:10%; height:200px; ">
             
+      </div>-->
+
+
+      <div class="col-sm-12">
+            <div style="text-align:right;">
+                  <img src="./images/stick.png"/>
+            </div>
       </div>
+
+      <br/>
+      <br/>
+
+      <br/>
+
+
+
+      <br/>
+      <br/>
+
+      <div class="line"></div>
+
+
       
       <h2>You're looking for  {{sort}} in {{place}} </h2>
 
@@ -51,14 +74,16 @@
             <div class="row">
                  <div class="col-sm-8">
                         <div class="col-sm-3" ng-repeat="yelpa in yelp" style="height:250px; text-align:center;"  autoscroll>
-                              <img ng-src="{{yelpa.img}}" class="img-thumbnail "/>
+                              <img ng-src="{{yelpa.img}}" class="img-thumbnail"/>
                               <br/>
-                              <a style="color:#9a2452;" href="#/detail/{{yelpa.idItem}}">{{yelpa.name}} </a>
-                              <br/> 
-                              <label>Raiting: {{yelpa.raiting}}   </label>
                               <br/>
-                              <label>Location: {{yelpa.location}}</label>
+                              <!--<a style="color:#9a2452;" href="#/detail/{{yelpa.idItem}}">{{yelpa.name}} </a>-->
+                              <label>{{yelpa.name}}</label>
                               <br/>
+                              <label class="fontSubtitle">{{yelpa.location}}</label>
+                              <br/>
+                              <label><a style="color:#9a2452; font-weight: lighter;" href="#/detail/{{yelpa.idItem}}">More info</a></label>
+                              
                         </div>
                  </div>
 
@@ -68,16 +93,34 @@
                          <div class="panel panel-default">  
                               <div class="panel-body">
                                     <h3>Deals </h3>                                    
-                                    <label ng-model="alertDeal">{{alertDeal}}</label>
+                                    <label class="fontBox" ng-model="alertDeal">{{alertDeal}}</label>
                                     <br/>
                                     <div ng-repeat="yelpo in yelp"> 
-                                          <h5 ng-repeat="deals in yelpo.deals">{{deals.what_you_get}}</h5>
+                                          <h5 ng-repeat="deals in yelpo.deals">
+                                          <label class="fontBox">{{deals.what_you_get}}</label>
+
+                                          </h5>
                                     </div>
 
                               </div>
                         </div>
 
+                        <br/>
 
+                        <div class="panel panel-default">  
+                              <div class="panel-body" >
+                                    <h3>Top rating</h3>
+                                    <ul>
+                                          <li ng-repeat="list in yelp" ng-if="list.raiting>4">
+                                                <label class="fontBox" >
+                                                      <span class="greenSymbol">&#10004;</span>
+                                                      {{list.name}}</label>
+                                          </li>
+                                    </ul>
+                              </div>
+                        </div>
+
+                        <br/>
 
                          <div class="panel panel-default">  
                               <div class="panel-body">
@@ -85,14 +128,15 @@
                                     <br/>
                                     <div class="row center-block align" >
                                           <div class="col-sm-12"  >
-                                                <input type="text" require  ngMinlength=1 style=" filter: alpha(opacity=55); -webkit-box-shadow: none;box-shadow: none;opacity: .55;"  ng-model="name"  placeholder="Email or name"/>
+                                                <input type="text" require  ngMinlength=1 class="boxImput" ng-model="name"  placeholder="Email or name"/>
                                           </div>
                                     </div>
 
                                     <br/>
                                     <div class="row center-block align" >
                                           <div class="col-sm-12">
-                                                <input type="text" require ngMinlength=1 style=" filter: alpha(opacity=55); -webkit-box-shadow: none;box-shadow: none;opacity: .55;"  ng-model="txt" placeholder="Msg"/>
+                                                <!--<input type="text" require ngMinlength=1 style=" filter: alpha(opacity=55); -webkit-box-shadow: none;box-shadow: none;opacity: .55;"  ng-model="txt" placeholder="Msg"/>-->
+                                                <textarea ng-model="txt" rows="6" cols="21" class="boxImput" ></textarea>
                                           </div>
 
                                     </div>
@@ -105,18 +149,29 @@
                                     </div>
 
 
+
+
                                       <ul >
-                                          <li ng-repeat="messages in message">{{messages.message}} by {{messages.name}}
-                                                <label style="display:none;">{{messages.idMessage}}</label>
+                                          <li>
+                                                <label>{{txt}}<label>
+                                          </li>
+                                          <li ng-repeat="messages in message">
+                                                <label class="fontBox">{{messages.message}} by {{messages.name}}</label>
+                                                <label style="display:none;" >{{messages.idMessage}}</label>
                                                 <a ng-click="deleteMsg(messages.idMessage)">Delete me</a>
                                           </li>
 
                                     </ul>
                               </div> 
-                        </div>  
+                        </div> 
+
+
                   </div>
             </div>
+
+
       </div>
+      <br/>
 
        <!--<div ng-view></div>-->
        

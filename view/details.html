@@ -1,13 +1,14 @@
 
-<!--<html>
-<head></head>
-<title>My App</title>-->
 <link rel="stylesheet" href="./css/css.css" type="text/css">
 <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
 	
 
 
 	<div class="container-fluid">
+
+	
+
+
 		<div class="row">
 			<div class="col-sm-12">
 
@@ -23,23 +24,21 @@
 			  		<h1 style="color:#9a2452;">{{yelp[whichItem].name}}</h1>
 					<br/>
 				
-					<!--<label>Raiting: {{yelp[whichItem].raiting}}</label>
-					<br/>
-					<label>Location: {{yelp[whichItem].location}}</label>
-					<br/>
-					<label>Phone: {{yelp[whichItem].phone}}</label>
-					<br/>
-					<label>Categories {{yelp[whichItem].categories}}</label>-->
+					
 			  	</div>
 
 			  	<div class="col-sm-4" style="text-align:left;">
-			  		<label>Raiting: {{yelp[whichItem].raiting}}</label>
+			  		<label>Rating:</label>
+			  		<label class="fontBox">  {{yelp[whichItem].raiting}}</label>
 					<br/>
-					<label>Location: {{yelp[whichItem].location}}</label>
+					<label>Location: </label>
+					<label class="fontBox"> {{yelp[whichItem].location}}</label>
 					<br/>
-					<label>Phone: {{yelp[whichItem].phone}}</label>
+					<label>Phone: </label>
+					<label class="fontBox"> {{yelp[whichItem].phone}}</label>
 					<br/>
-					<label>Categories {{yelp[whichItem].categories}}</label>
+					<label>Category: </label>
+					<label class="fontBox"> {{yelp[whichItem].categories}}</label>
 
 			  	</div>
 
@@ -73,7 +72,7 @@
 					<h1 >Review</h1>
 					
 					
-					<label>{{yelp[whichItem].snippet_text}}</label>
+					<label class="fontBox">{{yelp[whichItem].snippet_text}}</label>
 				</div>
 				<div class="col-sm-4" style="text-align:left;">
 					<img ng-src="{{yelp[whichItem].snippet_image_url}}" class="img-circle"/>
@@ -113,7 +112,6 @@
 
 
 	</div>
-
 
 
 
