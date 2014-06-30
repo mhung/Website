@@ -24,6 +24,8 @@
       </div>-->
 
 
+
+
       <div class="col-sm-12">
             <div style="text-align:right;">
                   <img src="./images/stick.png"/>
@@ -32,12 +34,22 @@
 
       <br/>
       <br/>
-
+      <br/>
+      <br/>
       <br/>
 
 
+     <!-- <ul class="nav nav-pills" >
+            <li > 
+                  <h3 class="greenSymbol">Home</h3>
+            </li>
+            <li>
+                  <h3 class="greenSymbol">About</h3>
+            </li>
+      </ul>-->
 
-      <br/>
+     
+
       <br/>
 
       <div class="line"></div>
@@ -98,7 +110,6 @@
                                     <div ng-repeat="yelpo in yelp"> 
                                           <h5 ng-repeat="deals in yelpo.deals">
                                           <label class="fontBox">{{deals.what_you_get}}</label>
-
                                           </h5>
                                     </div>
 
@@ -111,10 +122,11 @@
                               <div class="panel-body" >
                                     <h3>Top rating</h3>
                                     <ul>
-                                          <li ng-repeat="list in yelp" ng-if="list.raiting>4">
-                                                <label class="fontBox" >
+                                          <li ng-repeat="ratelist in yelp" >
+                                                <label class="fontBox" ng-if="ratelist.raiting>4.40" >
                                                       <span class="greenSymbol">&#10004;</span>
-                                                      {{list.name}}</label>
+                                                      {{ratelist.name}}
+                                                </label>
                                           </li>
                                     </ul>
                               </div>

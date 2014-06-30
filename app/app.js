@@ -15,7 +15,7 @@ app.config(['$routeProvider',function($routeProvider)
       }).
       otherwise(
       {
-                 // redirectTo:'/'
+            
       });
     
 }]);
@@ -47,16 +47,6 @@ app.controller('DetailsController', function($scope, $routeParams)
             $scope.nextItem=0;
       }
       
-
-     /* $location.hash($scope.id);
-      $timeout(function()
-      {
-         $anchorScroll();   
-      });*/
-      
-      //callYelp(type,place);
-
-      //$scope.whichItem=$routeParams.id;
 });
 
 
